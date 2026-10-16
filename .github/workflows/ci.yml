@@ -1,17 +1,19 @@
-name: DevOps Capstone CI 
-on: 
-  push: 
-    branches: [main] 
-  workflow_dispatch: 
-  
-jobs: 
-  test-website: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - name: Get project files 
+name: DevOps Capstone CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project files
         uses: actions/checkout@v4
-        
-      - name: Check website exists 
-        run: test -f index.html 
-      - name: Check welcome message 
-      run: grep -q "Welcome to My DevOps Project!" index.html
+
+      - name: Check website exists
+        run: test -f index.html
+
+      - name: Check welcome message
+        run: grep -q "Welcome to My DevOps Project!" index.html
